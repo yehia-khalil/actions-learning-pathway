@@ -1,0 +1,12 @@
+name: build-test-deploy
+on: push
+jobs: 
+  build-test-deploy-job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v4.0.2
+      - run: npm install
+      - run: npm run build
